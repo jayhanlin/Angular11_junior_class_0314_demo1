@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +10,9 @@ export class HeaderComponent implements OnInit {
   search = '';
   counter = 22;
   keyword = '';
-  isHighlight=false;
+  isHighlight = false;
+
+  @Output() keywordChange = new EventEmitter<string>();
 
   constructor() {}
 
@@ -18,9 +20,10 @@ export class HeaderComponent implements OnInit {
 
   doSearch(event: MouseEvent) {
     console.log(event);
-    this.keyword += '!';
-    this.counter ++;
-    this.isHighlight =!this.isHighlight;
+    // this.keyword += '!';
+    this.counter++;
+    this.isHighlight = !this.isHighlight;
+    this.keywordChange.emit(this.keyword);
   }
 
   keywordInput(event: InputEvent) {
@@ -30,4 +33,5 @@ export class HeaderComponent implements OnInit {
   wrapInput(element: HTMLInputElement) {
     return element;
   }
+
 }
