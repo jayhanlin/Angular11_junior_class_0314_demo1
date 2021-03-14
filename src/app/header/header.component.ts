@@ -11,6 +11,7 @@ export class HeaderComponent implements OnInit {
   counter = 22;
   keyword = '';
   isHighlight=false;
+
   constructor() {}
 
   ngOnInit(): void {}
