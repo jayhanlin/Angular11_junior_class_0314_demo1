@@ -31,6 +31,23 @@
     <button class="btn btn-sm btn-primary" (click)="doSearch($event)">
       <i class="ion-search"></i>
     </button>
-    <b style="color: red;" *ngIf="!keyword">請輸入查詢條件</b>
+
+    <span class="highlight">  <!-- 使用同一個span顯示if else，避免頁面上有過多無謂tag -->
+      <ng-container *ngIf="keyword === ''; then keywordNotify; else searchKeyword"></ng-container>
+      <!-- <ng-container>在html上不會產生tag -->
+      <!-- <ng-container *ngIf="keyword === ''; else searchKeyword">
+        請輸入查詢條件
+      </ng-container> -->
+    </span>
+
+    <ng-template #keywordNotify>
+      請輸入查詢條件
+    </ng-template>
+
+    <ng-template #searchKeyword>
+      輸入的關鍵字為: {{ keyword }}
+    </ng-template>
+
+    <!-- <b style="color: red;" *ngIf="!keyword">請輸入查詢條件</b> -->
   </div>
 </nav>
