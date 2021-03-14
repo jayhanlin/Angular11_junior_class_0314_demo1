@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   brand = 'conduit';
-  search='';
+  search = '';
+  counter = 22;
   constructor() {}
 
   ngOnInit(): void {}
@@ -15,5 +16,6 @@ export class HeaderComponent implements OnInit {
   change(value: string): void {
     this.brand = 'CONDUIT';
     this.search = value;
+    this.counter++;
   }
 }
