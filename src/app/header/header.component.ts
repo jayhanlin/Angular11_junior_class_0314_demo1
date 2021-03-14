@@ -9,13 +9,22 @@ export class HeaderComponent implements OnInit {
   brand = 'conduit';
   search = '';
   counter = 22;
+  keyword = '';
   constructor() {}
 
   ngOnInit(): void {}
 
-  change(value: string): void {
-    this.brand = 'CONDUIT';
-    this.search = value;
-    this.counter++;
+  doSearch(event: MouseEvent) {
+    console.log(event);
+    this.keyword += '!';
+    this.counter ++;
+  }
+
+  keywordInput(event: InputEvent) {
+    console.log(event);
+  }
+
+  wrapInput(element: HTMLInputElement) {
+    return element;
   }
 }
