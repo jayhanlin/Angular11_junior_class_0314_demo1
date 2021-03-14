@@ -1,0 +1,7 @@
+[
+  {
+    "context": "/api",
+    "target": "http://foo.bar",
+    "changeOrigin":true
+  }
+]
