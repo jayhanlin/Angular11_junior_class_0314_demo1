@@ -7,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   brand = 'conduit';
+  search='';
   constructor() {}
 
   ngOnInit(): void {}
 
-  change(): void {
+  change(value: string): void {
     this.brand = 'CONDUIT';
+    this.search = value;
   }
 }
