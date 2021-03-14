@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   keyword = '';
   isHighlight = false;
 
-  @Output() keywordChange = new EventEmitter<string>();
+  @Output() searchClick = new EventEmitter<string>(); // EventEmitter 事件發射器
 
   constructor() {}
 
@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
     // this.keyword += '!';
     this.counter++;
     this.isHighlight = !this.isHighlight;
-    this.keywordChange.emit(this.keyword);
+    this.searchClick.emit(this.keyword);
   }
 
   keywordInput(event: InputEvent) {

@@ -69,15 +69,15 @@ export class AppComponent {
     },
   ];
 
-  list = this.originalList;
+  articles = this.originalList;
 
   searchArticles($event) {
     if ($event) {
-      this.list = this.originalList.filter(
+      this.articles = this.originalList.filter(
         (item) => item.title.indexOf($event) !== -1
       );
     } else {
-      this.list = this.originalList;
+      this.articles = this.originalList;
     }
   }
 }
