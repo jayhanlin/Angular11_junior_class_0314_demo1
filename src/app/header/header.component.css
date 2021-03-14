@@ -1,3 +1,4 @@
 .highlight {
-  color: blue;
+  color: blue !important;
+   /* 不建議使用!important直接蓋掉navbar-brand 的color */
 }

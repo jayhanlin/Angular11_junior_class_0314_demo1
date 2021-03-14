@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light">
   <div class="container">
-    <a href="index.html" [style.font-size.px]="counter" [class.highlight]="counter%2==0">{{ brand }}</a>
+    <a class="navbar-brand" href="index.html" [style.font-size.px]="counter" [class.highlight]="isHighlight">{{ brand }}</a>
     <input class="form-control form-control-sm search-input" type="text" placeholder="Keyword" [(ngModel)]="keyword">
 
     <!-- 補充: 不使用 ngModel，自己做出類似雙向繫結的效果 -->

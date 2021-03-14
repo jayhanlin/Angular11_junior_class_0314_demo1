@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
   search = '';
   counter = 22;
   keyword = '';
+  isHighlight=false;
   constructor() {}
 
   ngOnInit(): void {}
@@ -18,6 +19,7 @@ export class HeaderComponent implements OnInit {
     console.log(event);
     this.keyword += '!';
     this.counter ++;
+    this.isHighlight =!this.isHighlight;
   }
 
   keywordInput(event: InputEvent) {
